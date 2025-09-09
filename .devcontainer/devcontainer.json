@@ -1,5 +1,8 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  "forwardPorts": [8000],
-  "postCreateCommand": "pip install fastapi uvicorn"
+  "name": "Trend Aggregator",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8000, 5432, 6379],
+  "postCreateCommand": "pip install fastapi uvicorn sqlalchemy redis psycopg2-binary"
 }
